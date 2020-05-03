@@ -3,12 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javed_bester;
+package javed_2darrays;
 
 /**
  *
  * @author ahlamjaved
  */
-public class Controller {
+public class Javed_2DArrays {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+    }
     
 }
