@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ITDEV-110
+Ahlam Javed
+Bester Game- Assignment #9
  */
 package javed_bester;
 
@@ -14,7 +14,7 @@ public class Player {
     int lastScore;
     int turnsTaken;
     private String player;
-    private int wins = 0;
+    private int rounds = 0;
     private int score;
     
     //Contructor
@@ -40,7 +40,7 @@ public class Player {
         dice4 = random.nextInt(max)+min;
         dice5 = random.nextInt(max)+min;
         
-        System.out.println(dice1+" "+ dice2+" " + dice3+" " + dice4+" " + dice5);
+        System.out.println("The numbers on the dice are: "+dice1+" "+ dice2+" " + dice3+" " + dice4+" " + dice5);
         
         return dice1+dice2+dice3+dice4+dice5;
     } 
@@ -54,7 +54,6 @@ public class Player {
             int val = roll();
             turnsTaken++;
             lastScore = val;
-            System.out.println("Your score is:\t"+val);
         }
         
     }
@@ -64,11 +63,12 @@ public class Player {
     }
 
     public int getWins() {
-        return wins;
+        return rounds;
     }
 
     public void addWin() {
-       wins++;
+        
+       rounds++;
     }
 
     public String getName() {

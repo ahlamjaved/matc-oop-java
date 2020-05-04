@@ -1,26 +1,24 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ITDEV-110
+Ahlam Javed
+Bester Game- Assignment #9
  */
 package javed_bester;
 
-/**
- *
- * @author ahlamjaved
- */
 public class Controller {
     
     private int games;
    
 
-    Player computerPlayer = new Player("computer");
-    Player player;// = new Dice("player");
-    
-    View view = new View();
+    Player computerPlayer;
+    Player player;
+    View view;
     
     Controller() {
         games = 1;//Constructor to initialize the game
+        
+        view = new View();
+        computerPlayer = new Player("computer");
     }
     private void calculateRoundWinner() {
 
@@ -57,17 +55,17 @@ public class Controller {
         player = new Player(view.playerName());
         do {
             computerPlayer.takeTurn(ShouldComputerPass());
-            view.display(computerPlayer.getName(), computerPlayer.lastScore, games);
-            //view.NextTurn();
+            view.display(computerPlayer.getName(), computerPlayer.lastScore, roundNumber);
+
             boolean doesPlayerWantToPass = view.ShouldPlayerPass();
-            player.takeTurn(view.ShouldPlayerPass());
-            view.display(player.getName(), player.turnsTaken, games);
+            player.takeTurn(doesPlayerWantToPass);
+            view.display(player.getName(), player.lastScore, roundNumber);
             calculateRoundWinner();
             calculateOverallWinner();
-            games++;
+            roundNumber++;
 
         } while ((!view.exit()) && (roundNumber < 5));
-        //ui.totalRolls(score, count);
+        games++;
     }
 
 }

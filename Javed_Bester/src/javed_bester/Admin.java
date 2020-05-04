@@ -1,14 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ITDEV-110
+Ahlam Javed
+Bester Game- Assignment #9
  */
 package javed_bester;
 
-/**
- *
- * @author ahlamjaved
- */
 public class Admin {
     public void Introduction () {
         System.out.println("Bester is a dice game where players try to play the odds against each other.\n\nEach player rolls five die for up to five rolls.\n\nThe total value of all die is calculated for each roll.\n\nAfter each roll a player can stop if they feel the total value of the roll is sufficient to win.\n\nEach player attempts to beat the total value of the previous players.\n\nThe winner is the one with the highest total after five attempts.");

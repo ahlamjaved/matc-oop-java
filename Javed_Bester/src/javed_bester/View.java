@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ITDEV-110
+Ahlam Javed
+Bester Game- Assignment #9
  */
 package javed_bester;
 
@@ -9,9 +9,7 @@ import java.util.Scanner;
 
 public class View {
     
-    Scanner input = new Scanner(System.in);
-    char decision;
-    
+    Scanner input = new Scanner(System.in);    
     public String playerName(){
         System.out.println("Please enter the players name: ");
         return(input.nextLine());
@@ -26,8 +24,8 @@ public class View {
         System.out.println("Would you like to roll the die or pass your turn?");
         System.out.println("Enter [p] to pass.");
         System.out.println("Enter any other key to roll.");
-        decision = input.nextLine().charAt(0);
-        if (decision == 'p') {
+        String decision = input.nextLine();
+        if (decision.equals("p")) {
             return true;
         } 
         else {
@@ -51,9 +49,6 @@ public class View {
     
     public void roundWinner(int count, String winner){
     System.out.println("The winner of round "+count+" is "+winner+".");
-       // System.out.println("The winner of all rounds is"+overallWinner);
-        //System.out.println("");
-       // System.out.println("");
     }
      public void overallWinner(int lower, int higher, String winner){
         System.out.println("The overall winner is "+winner+".");
