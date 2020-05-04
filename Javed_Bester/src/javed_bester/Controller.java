@@ -26,36 +26,43 @@ public class Controller {
 
         if (computerPlayer.getScore() > player.getScore()) {
             computerPlayer.addWin();
-            view.roundWinner(games, computerPlayer.getPlayer());
+            view.roundWinner(games, computerPlayer.getName());
         }
 
         if (computerPlayer.getScore() < player.getScore()) {
             player.addWin();
-            view.roundWinner(games, player.getPlayer());
+            view.roundWinner(games, player.getName());
         }
     }
 
     private void calculateOverallWinner() {
         if (computerPlayer.getWins() > player.getWins()) {
-            view.overallWinner(player.getWins(),computerPlayer.getWins(), computerPlayer.getPlayer());
+            view.overallWinner(player.getWins(),computerPlayer.getWins(), computerPlayer.getName());
         }
         if (computerPlayer.getWins() < player.getWins()) {
-            view.overallWinner(computerPlayer.getWins(),player.getWins(), player.getPlayer());
+            view.overallWinner(computerPlayer.getWins(),player.getWins(), player.getName());
         }
+    }
+    
+    public boolean ShouldComputerPass() {
+        return true;
     }
 
     public void play() {
+        int roundNumber = 0;
         player = new Player(view.playerName());
         do {
-            view.display(computerPlayer.getPlayer(), computerPlayer.roll(), games);
-            view.NextTurn();
-            view.display(player.getPlayer(), player.roll(), games);
+            computerPlayer.takeTurn(ShouldComputerPass());
+            view.display(computerPlayer.getName(), computerPlayer.lastScore, games);
+            //view.NextTurn();
+            boolean doesPlayerWantToPass = view.ShouldPlayerPass();
+            
+            view.display(player.getName(), player.turnsTaken, games);
             calculateRoundWinner();
             calculateOverallWinner();
-           
             games++;
 
-        } while ((!view.exit()) && (games < 6));
+        } while ((!view.exit()) && (roundNumber < 5));
         //ui.totalRolls(score, count);
     }
 

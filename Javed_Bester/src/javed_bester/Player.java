@@ -13,7 +13,6 @@ public class Player {
     //Variables
     int lastScore;
     int turnsTaken;
-    char pass = 'p';
     private String player;
     private int wins = 0;
     private int score;
@@ -26,7 +25,7 @@ public class Player {
         
     }
     
-    public int roll() {
+    private int roll() {
         //This method gives a random number 1-6 and storing 5 different random values in 5 different variables. Then the method will RETURN the SUM of the 5 variables
         
         Random random = new Random();
@@ -46,15 +45,9 @@ public class Player {
         return dice1+dice2+dice3+dice4+dice5;
     } 
     
-    public void takeTurn() {
+    public void takeTurn(boolean shouldPass) {
         
-       
-        
-        System.out.println("Would you like to roll the die or pass your turn?");
-        System.out.println("Enter [p] to pass.");
-        System.out.println("Enter any other key to roll.");
-        
-        if (pass == 'p') {
+        if (shouldPass) {
             return;
         }
         else {
@@ -78,7 +71,7 @@ public class Player {
        wins++;
     }
 
-    public String getPlayer() {
+    public String getName() {
         return player;
     }
 }

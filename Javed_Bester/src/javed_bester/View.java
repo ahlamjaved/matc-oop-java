@@ -10,15 +10,29 @@ import java.util.Scanner;
 public class View {
     
     Scanner input = new Scanner(System.in);
+    char decision;
     
     public String playerName(){
         System.out.println("Please enter the players name: ");
         return(input.nextLine());
     }
     
-    public String NextTurn(){
+    /*public String NextTurn(){
         System.out.println("Press enter to roll dice");
         return(input.nextLine());
+    }*/
+    
+    public boolean ShouldPlayerPass() {
+        System.out.println("Would you like to roll the die or pass your turn?");
+        System.out.println("Enter [p] to pass.");
+        System.out.println("Enter any other key to roll.");
+        decision = input.nextLine().charAt(0);
+        if (decision == 'p') {
+            return true;
+        } 
+        else {
+            return false;
+        }
     }
     
     public void display(String name, int score, int rollNumber){
