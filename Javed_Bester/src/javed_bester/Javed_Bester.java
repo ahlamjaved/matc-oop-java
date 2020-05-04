@@ -16,7 +16,7 @@ public class Javed_Bester {
     public static void main(String[] args) {
         
         Admin admin = new Admin();
-        Computer diceGame = new Computer();
+        Controller diceGame = new Controller();
   
         admin.Introduction();
         admin.Directions();
