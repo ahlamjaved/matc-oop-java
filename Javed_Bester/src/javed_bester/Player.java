@@ -14,11 +14,16 @@ public class Player {
     int lastScore;
     int turnsTaken;
     char pass = 'p';
+    private String player;
+    private int wins = 0;
+    private int score;
     
     //Contructor
-    Player() {
+    Player(String name) {
         lastScore = 0;
         turnsTaken = 0;
+        player = name;
+        
     }
     
     public int roll() {
@@ -28,7 +33,7 @@ public class Player {
         
         int dice1, dice2, dice3, dice4, dice5;
         int min = 1;
-        int max = 5;
+        int max = 6;
         
         dice1 = random.nextInt(max)+min;
         dice2 = random.nextInt(max)+min;
@@ -59,5 +64,21 @@ public class Player {
             System.out.println("Your score is:\t"+val);
         }
         
+    }
+    
+    public int getScore() {
+        return score;
+    }
+
+    public int getWins() {
+        return wins;
+    }
+
+    public void addWin() {
+       wins++;
+    }
+
+    public String getPlayer() {
+        return player;
     }
 }
