@@ -45,7 +45,11 @@ public class Controller {
     }
     
     public boolean ShouldComputerPass() {
-        return true;
+        if (computerPlayer.getScore() > player.getScore())
+                return true;
+        else {
+        return false;
+        }
     }
 
     public void play() {
@@ -56,7 +60,7 @@ public class Controller {
             view.display(computerPlayer.getName(), computerPlayer.lastScore, games);
             //view.NextTurn();
             boolean doesPlayerWantToPass = view.ShouldPlayerPass();
-            
+            player.takeTurn(view.ShouldPlayerPass());
             view.display(player.getName(), player.turnsTaken, games);
             calculateRoundWinner();
             calculateOverallWinner();
