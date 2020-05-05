@@ -11,7 +11,7 @@ public class View {
     
     Scanner input = new Scanner(System.in);    
     public String playerName(){
-        System.out.println("Please enter the players name: ");
+        System.out.print("Please enter the players name: ");
         return(input.nextLine());
     }
     
@@ -21,7 +21,7 @@ public class View {
     }*/
     
     public boolean ShouldPlayerPass() {
-        System.out.println("Would you like to roll the die or pass your turn?");
+        System.out.println("Would you like to roll the dice or pass your turn?");
         System.out.println("Enter [p] to pass.");
         System.out.println("Enter any other key to roll.");
         String decision = input.nextLine();
@@ -40,21 +40,8 @@ public class View {
         System.out.println();
     }
     
-    public void displaytotalRolls(int score, int rollNumber){
-        System.out.println();
-        System.out.println("Your total number of rolls is "+ rollNumber+" .");
-        System.out.println();
-        System.out.println();
-    }
-    
-    public void roundWinner(int count, String winner){
-    System.out.println("The winner of round "+count+" is "+winner+".");
-    }
-     public void overallWinner(int lower, int higher, String winner){
-        System.out.println("The overall winner is "+winner+".");
-        System.out.println(higher+" to "+lower);
-        System.out.println("");
-        System.out.println("");
+     public void displayWinner(String winner, int score){
+        System.out.println("The winner is: "+winner+" with a score of: "+score);
     }
     
     public boolean exit(){

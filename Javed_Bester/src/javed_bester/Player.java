@@ -13,15 +13,15 @@ public class Player {
     //Variables
     int lastScore;
     int turnsTaken;
-    private String player;
-    private int rounds = 0;
-    private int score;
+    private String name;
+    private int wins;
     
     //Contructor
     Player(String name) {
         lastScore = 0;
         turnsTaken = 0;
-        player = name;
+        this.name = name;
+        wins = 0;
         
     }
     
@@ -58,20 +58,20 @@ public class Player {
         
     }
     
-    public int getScore() {
-        return score;
+    public int getLastScore() {
+        return lastScore;
     }
 
     public int getWins() {
-        return rounds;
+        return wins;
     }
 
     public void addWin() {
         
-       rounds++;
+       wins++;
     }
 
     public String getName() {
-        return player;
+        return name;
     }
 }
