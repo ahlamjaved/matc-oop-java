@@ -60,8 +60,6 @@ public class Controller {
         } while ((!view.exit()) && (roundNumber < 5));
         
         calculateWinner();
-        //games++;
-        //view.Winner(computerPlayer.getScore(),player.getScore(), );
     }
    
 
