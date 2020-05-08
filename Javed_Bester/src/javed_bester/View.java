@@ -1,28 +1,60 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ITDEV-110
+Ahlam Javed
+Bester Game- Assignment #9
  */
 package javed_bester;
 
-/**
- *
- * @author ahlamjaved
- */
+import java.util.Scanner;
+
 public class View {
     
-    public void Introduction () {
-        System.out.println("Bester is a dice game where players try to play the odds against each other.");
-        System.out.println("Each player rolls five die for up to five rolls.");
-        System.out.println("The total value of all die is calculated for each roll.");
-        System.out.println("After each roll a player can stop if they feel the total value of the roll is sufficient to win. ");
-        System.out.println("Each player attempts to beat the total value of the previous players.");
-        System.out.println("The winner is the one with the highest total after five attempts.");
-        System.out.println("Ready to play? Let's begin!");
+    Scanner input = new Scanner(System.in);    
+    public String playerName(){
+        System.out.print("Please enter the players name: ");
+        return(input.nextLine());
     }
     
-    public void Directions () {
-        
+    /*public String NextTurn(){
+        System.out.println("Press enter to roll dice");
+        return(input.nextLine());
+    }*/
+    
+    public boolean ShouldPlayerPass() {
+        System.out.println("Would you like to roll the dice or pass your turn?");
+        System.out.println("Enter [p] to pass.");
+        System.out.println("Enter any other key to roll.");
+        String decision = input.nextLine();
+        if (decision.equals("p")) {
+            return true;
+        } 
+        else {
+            return false;
+        }
     }
     
+    public void display(String name, int score, int rollNumber){
+        System.out.println();
+        System.out.println(name+":\t........................................."+score);
+        System.out.println();
+        System.out.println();
+    }
+    
+     public void displayWinner(String winner, int score){
+        System.out.println("The winner is: "+winner+" with a score of: "+score);
+    }
+    
+    public boolean exit(){
+        System.out.println("(0)to exit");
+        System.out.println("(1) to roll again.");
+        if (input.nextInt()==0){
+            input.nextLine();
+            return(true);
+        }
+        else {
+            input.nextLine();
+            return(false);
+        }
+            
+    }
 }
